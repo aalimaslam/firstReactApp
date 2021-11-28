@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 function Nav(props){
     return (
@@ -10,25 +11,16 @@ function Nav(props){
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav">
                 <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/">Home</a>
+                    <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="/">About</a>
+                    <Link className="nav-link" to="/about">About</Link>
                 </li>
-                <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Utils
-                    </a>
-                    <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a className="dropdown-item" href="/">Action</a></li>
-                    <li><a className="dropdown-item" href="/">Another action</a></li>
-                    <li><a className="dropdown-item" href="/">Something else here</a></li>
-                    </ul>
-                </li>
+                
                 </ul>
             </div>
                 <label className={`form-check-label text-${props.mode === 'light' ? "dark" : "light"} mx-2`} htmlFor="flexSwitchCheckDefault">Light Mode </label>  
-            <div class="form-check form-switch">
+            <div className="form-check form-switch">
                 <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                 <label className={`form-check-label text-${props.mode === 'light' ? "dark" : "light"}`} htmlFor="flexSwitchCheckDefault">Dark Mode</label>
             </div>
